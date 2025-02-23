@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouses</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Warehouses</h1>
+    <form action="#" method="get">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Capacity</th>
+                <th>Current Amount Stored</th>
+                <th>Overflow Percentage</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="warehouse : ${warehouses}">
+                <td th:text="${warehouse.id}"></td>
+                <td th:text="${warehouse.capacity}"></td>
+                <td th:text="${warehouse.currentAmountStored}"></td>
+                <td th:text="${warehouse.overflowPercentage}"></td>
+                <td>
+                    <a th:href="@{/warehouses/{warehouseId}/materials(warehouseId=${warehouse.id})}" class="btn btn-primary">
+                        View Materials
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</html>

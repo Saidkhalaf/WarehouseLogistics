@@ -1,0 +1,81 @@
+### GET all warehouses
+GET http://localhost:8081/api/warehouses
+
+### GET warehouse by id
+GET http://localhost:8081/api/warehouse/1
+
+### POST purchase order v1
+POST http://localhost:8081/api/warehouses/purchaseOrders
+Content-Type: application/json
+
+{
+  "purchaseOrder": {
+    "poNumber": "PO12345",
+    "referenceUUID": "cad14d26-dfa8-4b22-93c0-3550e69c4afa",
+    "customerParty": {
+      "id": "204ed99b-b674-4131-b0e9-da9f34d48d00",
+      "name": "Customer A",
+      "address": "123 Main St"
+    },
+    "sellerParty": {
+      "id": "85283b84-7239-4fd6-8c25-991460bd378b",
+      "name": "Seller X",
+      "address": "321 Market St"
+    },
+    "vesselNumber": "Vessel001",
+    "orderLines": [
+      {
+        "lineNumber": 0,
+        "materialType": "GP",
+        "description": "Gips",
+        "quantity": 100,
+        "uom": "kt"
+      },
+      {
+        "lineNumber": 0,
+        "materialType": "PT",
+        "description": "Petcoke",
+        "quantity": 200,
+        "uom": "kt"
+      }
+    ]
+  }
+}
+
+### POST purchase order v2
+POST http://localhost:8081/api/warehouses/purchaseOrders
+Content-Type: application/json
+
+{
+  "purchaseOrder": {
+    "poNumber": "PO67890",
+    "referenceUUID": "b1234567-d89e-4b22-93c0-4440e69c4afa",
+    "customerParty": {
+      "id": "e22b573a-9eb6-45f7-86fd-35249a0b3b9a",
+      "name": "Customer B",
+      "address": "456 Elm St"
+    },
+    "sellerParty": {
+      "id": "961850d2-7ccd-436f-9a2c-1cc4fed0e023",
+      "name": "Seller Y",
+      "address": "654 Market St"
+    },
+    "vesselNumber": "Vessel002",
+    "orderLines": [
+      {
+        "lineNumber": 1,
+        "materialType": "GP",
+        "description": "Gypsum",
+        "quantity": 150,
+        "uom": "kt"
+      },
+      {
+        "lineNumber": 2,
+        "materialType": "PT",
+        "description": "Petroleum Coke",
+        "quantity": 250,
+        "uom": "kt"
+      }
+    ]
+  }
+}

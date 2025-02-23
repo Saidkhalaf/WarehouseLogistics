@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materials</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Materials in Warehouse</h1>
+    <p style="font-weight: bold;">Total Materials in this warehouse is : <span th:text="${totalMaterials}"></span></p>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Storage Price Per Ton Per Day</th>
+            <th>Selling Price Per Ton</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="material : ${materials}">
+            <td th:text="${material.name}"></td>
+            <td th:text="${material.description}"></td>
+            <td th:text="${material.storagePricePerTonPerDay}"></td>
+            <td th:text="${material.sellingPricePerTon}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
